@@ -102,7 +102,7 @@
   background: var(--red);
 }
 
-.challengeActive button.challengeSuccededButton{
+.challengeActive button.challengeSucceededButton{
   background: var(--green);
 }
 
