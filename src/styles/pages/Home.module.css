@@ -11,7 +11,18 @@
 .container section{
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 6.25rem;
     align-content: center;
+}
+
+@media (min-width: 768px){
+    .container section{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:425px){
+    .container section{
+        grid-template-rows: 1fr 1fr;
+    }
 }
