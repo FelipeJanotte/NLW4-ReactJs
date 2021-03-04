@@ -14,11 +14,11 @@ interface CountdownContextData {
   isActive: boolean;
   startCountdown: () => void;
   resetCountdown: () => void;
-}
+};
 
 interface CountdownProviderProps {
   children: ReactNode;
-}
+};
 
 export const CountdownContext = createContext({} as CountdownContextData);
 
@@ -36,14 +36,14 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
 
   function startCountdown() {
     setIsActive(true);
-  }
+  };
 
   function resetCountdown() {
     clearTimeout(countdownTimeout);
     setIsActive(false);
     setHasFinished(false);
-    setTime(60);
-  }
+    setTime(60 * 0.1 /*/2*/ );
+  };
 
   useEffect(() => {
     if (isActive && time > 0) {
@@ -54,7 +54,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       setHasFinished(true);
       setIsActive(false);
       startNewChallenge();
-    }
+    };
   }, [isActive, time]);
 
   return (
